@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "compile",
+      "setup": "",
+      "run": "gcc many_heights.c -o many_heights",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "compile",
+      "setup": "",
+      "run": "gcc expire.c -o expire",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "run -expired",
+      "setup": "",
+      "run": "./expire",
+      "input": "6/15/2021\r\n6/15/2021",
+      "output": "Nooooo don't eat it! It's expired!",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "run -not expired",
+      "setup": "",
+      "run": "./expire",
+      "input": "6/15/2021\r\n5/31/2021",
+      "output": "15 days until that food is going to try to murder you.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

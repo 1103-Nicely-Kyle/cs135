@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "compile",
+      "setup": "",
+      "run": "gcc height.c -o height",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Who's taller?",
+      "setup": "",
+      "run": "./height",
+      "input": "1",
+      "output": "N is taller by 0'7\".",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

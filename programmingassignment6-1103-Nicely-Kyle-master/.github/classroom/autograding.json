@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "compile",
+      "setup": "",
+      "run": "gcc more_heights.c -o more_heights",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "compile",
+      "setup": "",
+      "run": "gcc date_calc.c -o date_calc",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "subtract",
+      "setup": "",
+      "run": "./date_calc",
+      "input": "1\r\n1/15\r\n15",
+      "output": "Subtracting\r\nNew date: 12/30",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "add",
+      "setup": "",
+      "run": "./date_calc",
+      "input": "2\r\n1/15\r\n30",
+      "output": "Adding\r\nNew date: 2/15",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

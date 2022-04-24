@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "compile",
+      "setup": "",
+      "run": "gcc party.c -o party",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "party 1",
+      "setup": "",
+      "run": "./party",
+      "input": "75\r\n15 G\r\n80\r\n10 S",
+      "output": "\r\nParty 1 is more affordable, but Party 2 seems like more fun!\r\nParty 1: $29.00\r\nParty 2: $29.50",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "party2 ",
+      "setup": "",
+      "run": "./party",
+      "input": "75\r\n10 A\r\n80\r\n10 B",
+      "output": "\r\nParty 2 is more affordable, but Party 1 seems like more fun!\r\nParty 2: $25.50\r\nParty 1: $28.75",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

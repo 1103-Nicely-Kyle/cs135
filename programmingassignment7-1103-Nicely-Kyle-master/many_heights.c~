@@ -1,0 +1,114 @@
+//Author: Kyle Nicely
+//Date: 10/7/2021
+//more_heights
+
+#include <stdio.h>
+#define Num_Digits 50
+int getMenuChoice();
+void displayHeights();
+int loadHeightData(FILE* fp, int maxNumHeights, char initial, double heightsArray[]);
+double calcAverageHeight(int maxNumHeights, double heightsArray[]);
+
+int main() {
+	
+	//declare variables
+	int menuChoice,maxNumHeights;
+	double heightsArray[Num_Digits], avgHeight;
+	char initial;
+	FILE *fp; 
+	//start loop	
+	do {
+		printf("***HEIGHT SYSTEM***\n");
+		menuChoice = getMenuChoice(); 
+		
+	switch (menuChoice) {
+		case 0:
+		break;
+		case 1: //open file stream to read
+			  fp = fopen("heights.txt", "r");
+			  if (fp == NULL) {
+			  printf("Cannot open file\n");
+  			  }
+  			  else {
+				displayHeights(fp);
+				fclose(fp);
+  			  };
+		break;
+		case 2: //open file stream to read
+			  fp = fopen("heights.txt", "r");
+			  if (fp == NULL) {
+			  printf("Cannot open file\n");
+  			  }
+  			  else {
+				displayHeights(fp);
+				printf("Which initial do you want to calculate for? ");
+				scanf(" %c", &initial);
+				loadHeightData(fp, maxNumHeights, initial, &heightsArray[Num_Digits]);
+				avgHeight = calcAverageHeight(maxNumHeights, &heightsArray[Num_Digits]);
+			  };
+		break;
+		
+		default: printf("Please enter a valid option!\n");
+	  }
+	} while (menuChoice != 0);
+	
+return 0;
+}
+
+int getMenuChoice() {
+  int menuChoice;
+  //display to screen the options to the user
+  printf("1. Display Heights\n");
+  printf("2. Calculate Average Height\n");
+  printf("0. EXIT\n");
+  //get users choice
+  printf("Enter your choice: ");
+  scanf(" %d",&menuChoice);
+  //return input to calling function
+  return menuChoice;
+}
+
+void displayHeights(FILE *fp) {
+	int i = 0;
+	double heightsArray[Num_Digits];
+	char initial;
+	
+	while(fscanf(fp, " %c", &initial) == 1) {
+		printf("%c:   ",initial);		
+		
+		for(i = 0; i < Num_Digits; i++) {
+		fscanf(fp, " %lf", &heightsArray[i]);
+		printf("%.2lf ", heightsArray[i]);
+		}
+	printf("\n");
+	}		
+}
+
+int loadHeightData(FILE* fp, int maxNumHeights, char initial, double heightsArray[]) {
+	int i = 0;	
+	char temp, fileInitial;
+	double tempHeight;
+	
+	while(fscanf(fp, " %c", &temp) == 1) {
+				
+		if(initial == fileInitial) {
+		  while(fscanf(fp, " %lf", &heightsArray[i]) == 1) {
+		      tempHeight = heightsArray[i];
+		      i++;
+		 	}
+		}
+	}
+return i;
+}
+
+double calcAverageHeight(int maxNumHeights, double heightsArray[]) {
+	printf("%d", maxNumHeights);	
+	int avgHeight;
+	int i = 0;
+	for(i = 0; i < Num_Digits; i++) {
+		avgHeight += heightsArray[i];
+		avgHeight /= maxNumHeights;
+	}
+	return avgHeight;
+}
+

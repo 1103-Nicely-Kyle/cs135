@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+
+
+int loadHeightData(FILE* fp, int i, char initial, double heightsArray[]) {
+	i = 0;	
+	char temp;
+	double tempHeight;
+	
+	while(fscanf(fp, " %c", &temp) == 1) {
+				
+		if(initial == temp) {
+		  while(fscanf(fp, " %lf", &tempHeight) == 1) {
+		      tempHeight = heightsArray[i];
+		      i++;
+		 	}
+		}
+	}
+	printf("%d",i);	    
+        
+return i;
+}

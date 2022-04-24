@@ -1,0 +1,79 @@
+//Kyle Nicely
+//11-19-21
+//palindrome
+
+#include <stdio.h>
+#define LENGTH 50
+
+_Bool isPalindrome(char array[]);
+_Bool isSameString(char array2[], char array3[]);
+void reverseCopy(char sourceStr[], char destinStr[]);
+int stringLength(char array6[]);
+
+
+int main() {
+  char string1[LENGTH], string2[LENGTH];
+  int stringLength1;
+  _Bool sameWord, palindrome;
+  char reverseStr[LENGTH], reverseStr2[LENGTH];
+  
+  printf("Enter your first word: ");
+  fgets(string1, LENGTH, stdin);
+  printf("Enter your second word: ");
+  fgets(string2, LENGTH, stdin);
+
+  sameWord = isSameString(string1, string2);
+  if(sameWord) {
+    printf("You entered the same words!\n");
+  }
+ 
+  palindrome = isPalindrome(string1);
+  printf("%d\n", palindrome);
+  return 0;
+}
+
+int stringLength(char array6[]) {
+  int i = 0;
+  for (i; array6[i] != '\0'; i++);
+
+  return i-1;
+}
+
+_Bool isSameString(char array2[], char array3[]) {
+ int  length = stringLength(array2);
+ int length2 = stringLength(array3);
+  for (int i = 0; i < length; i++) {
+    if (length != length2)
+      return 0;
+    if (array3[i] != array2[i]) 
+      return 0;
+    else
+      return 1;
+  }
+}
+
+void reverseCopy(char sourceStr[], char destinStr[]) {
+  int length = stringLength(sourceStr);
+  int i = length;
+  int n =0;
+  while (sourceStr[i] >= 0) {
+    destinStr[n] = sourceStr[i];
+    i--;
+    n++;
+  }
+}
+
+_Bool isPalindrome(char array[]) {
+  char reverseArray[LENGTH];
+  int length;
+  length = stringLength(array);
+  reverseCopy(array, reverseArray);
+  printf("%s\n",reverseArray);
+  printf("%d\n",length);
+  for (int i = 0; i < length; i++) {
+    if (reverseArray[i] != array[i]) 
+      return 0;
+    else
+      return 1;
+  }
+}

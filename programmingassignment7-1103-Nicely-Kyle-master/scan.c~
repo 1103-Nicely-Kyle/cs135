@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+  	fp = fopen("heights.txt", "r");
+        if (fp == NULL) {
+	  printf("Cannot open file\n");
+        }
+	else {
+
+  
+
+  return 0;
+}

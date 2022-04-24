@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "compile",
+      "setup": "",
+      "run": "gcc palindrome.c -o palindrome",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "same -not palindrome",
+      "setup": "",
+      "run": "./palindrome",
+      "input": "Erin\r\nErin",
+      "output": "You entered the same words!\r\n'Erin' is not palindrome.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "same -palindrome",
+      "setup": "",
+      "run": "./palindrome",
+      "input": "abba\r\nabba",
+      "output": "You entered the same words!\r\n'abba' is a palindrome!",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "different -not palindrome",
+      "setup": "",
+      "run": "./palindrome",
+      "input": "Erin\r\nErinKeith",
+      "output": "'Erin' is not palindrome.\r\n'ErinKeith' is not palindrome.",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "different -palindrome",
+      "setup": "",
+      "run": "./palindrome",
+      "input": "abba\r\ntacocat",
+      "output": "'abba' is a palindrome!\r\n'tacocat' is a palindrome!",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
