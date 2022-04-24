@@ -1,4 +1,4 @@
-# hello this is my c code from intro to cs
+# intro to cs
 
 
-the course was in fall 2021
+fall 2021
